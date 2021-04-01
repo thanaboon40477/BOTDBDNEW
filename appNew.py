@@ -80,7 +80,7 @@ while True:
         try:
             startAll = 1
             while True:
-                # print('Page',i+1,'...')
+                print('Page',i+1,'...')
                 box = scaping_row_table(driver, lst, startAll)
                 next_page = driver.find_element_by_xpath('//*[@id="next"]')
                 next_page.click()
