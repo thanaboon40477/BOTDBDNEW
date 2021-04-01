@@ -64,10 +64,11 @@ while True:
                 time.sleep(8)
             finish = startPage - 1
             save_excel_page_new(box, keyword, start, finish, driver)
-            print(f"Completed {start} to {finish} :)\n")   
+            print(f"Completed Page {start} to Page {finish} :)\n")   
         except:
+
             save_excel_page_new(box, keyword, start, startPage, driver)
-            print(f"Completed {start} to {startPage} :)\n")
+            print(f"Completed Page {start} to Page {startPage} :)\n")
                 
     elif yesno == "n":
         cookie = str(input("Enter Cookie : "))

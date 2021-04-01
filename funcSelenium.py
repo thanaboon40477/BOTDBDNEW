@@ -130,7 +130,7 @@ def scaping_row_table(driver, lst, startPage):
         #---Click---#
         row_xpath = driver.find_element_by_xpath(f'//*[@id="fixTable"]/tbody/tr[{i}]')
         row_xpath.click()
-        time.sleep(7)
+        time.sleep(1)
         #---Click---#
 
         # วันที่จดทะเบียนจัดตั้ง
