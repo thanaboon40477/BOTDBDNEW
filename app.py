@@ -45,9 +45,11 @@ while True:
 
         sum_page = finishPage - startPage
 
+        time.sleep(1)
         input_page = driver.find_element_by_xpath('//*[@id="cPage"]')
         input_page.send_keys(Keys.BACK_SPACE)
         input_page.send_keys(startPage)
+        time.sleep(1)
         input_page.send_keys(Keys.ENTER)
         time.sleep(8)
 
@@ -55,7 +57,7 @@ while True:
         try:
             # lst = []
             for i in range(sum_page+1):
-                # lst.append(scaping_table(driver))
+                lst.append(scaping_table(driver))
                 print('Page',startPage,'...')
                 
                 next_page = driver.find_element_by_xpath('//*[@id="next"]')
