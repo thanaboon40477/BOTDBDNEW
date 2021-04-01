@@ -56,7 +56,7 @@ while True:
         try:
             for i in range(sum_page+1):
                 print()
-                print('Page',startPage,'...')
+                print('************** Page',startPage,'**************')
                 box = scaping_row_table(driver, lst, startPage)
                 next_page = driver.find_element_by_xpath('//*[@id="next"]')
                 next_page.click()
@@ -66,8 +66,8 @@ while True:
             save_excel_page_new(box, keyword, start, finish, driver)
             print(f"Completed Page {start} to Page {finish} :)\n")   
         except:
-            save_excel_page_new(box, keyword, start, startPage, driver)
-            print(f"Completed Page {start} to Page {startPage} :)\n")
+            save_excel_page_new(box, keyword, start, startPage-1, driver)
+            print(f"Completed Page {start} to Page {startPage-1} :)\n")
                 
     elif yesno == "n":
         cookie = str(input("Enter Cookie : "))

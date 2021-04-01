@@ -60,7 +60,7 @@ def scaping_row_table(driver, lst, startPage):
     for i in range(10):
         # start_time = time.time()
         i += 1
-        print(f'------Page {startPage} Row',i,'...')
+        print(f'Page {startPage} Row',i,'...')
         # ลำดับ
         time.sleep(2)
         order = driver.find_elements_by_xpath(f'//*[@id="fixTable"]/tbody/tr[{i}]/td[1]')
@@ -163,7 +163,7 @@ def scaping_row_table(driver, lst, startPage):
         email = email_adress[0].text
         print(email)
 
-        print(f"------Complate Page {startPage} Row {i} :)")
+        print(f"Complate Page {startPage} Row {i} :)")
         print()
 
         # end_time = time.time() - start_time
@@ -193,7 +193,8 @@ def scaping_row_table(driver, lst, startPage):
                             'วันที่จดทะเบียนจัดตั้ง':date_incop, 'ที่ตั้ง':location, 'โทรศัพท์':phone_nb, 'เว็บไซต์':web, 'อีเมลล์':email}
         
         lst.append(data)
-    print(f"**********Complate Page {startPage}**********")
+    print(f"********** Complate Page {startPage} **********")
+    
     return lst
         
 def save_excel_page_new(lst, keyword, start, finish, driver):
