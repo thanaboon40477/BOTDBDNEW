@@ -171,6 +171,7 @@ def scaping_row_table(driver, lst, startPage):
         
         driver.back() 
         select_val = driver.find_element_by_xpath('//*[@id="sortBy"]') 
+        time.sleep(1)
         select_val.click()
         time.sleep(1)
         val_xpath = driver.find_element_by_xpath('//*[@id="sortBy"]/option[1]')
@@ -192,7 +193,7 @@ def scaping_row_table(driver, lst, startPage):
                             'วันที่จดทะเบียนจัดตั้ง':date_incop, 'ที่ตั้ง':location, 'โทรศัพท์':phone_nb, 'เว็บไซต์':web, 'อีเมลล์':email}
         
         lst.append(data)
-        
+    print(f"**********Complate Page {startPage}**********")
     return lst
         
 def save_excel_page_new(lst, keyword, start, finish, driver):

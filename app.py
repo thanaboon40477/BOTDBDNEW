@@ -58,9 +58,8 @@ while True:
             # lst = []
             for i in range(sum_page+1):
                 lst.append(scaping_table(driver))
-                print('Page',startPage,'...')
-                
                 next_page = driver.find_element_by_xpath('//*[@id="next"]')
+                print('Page',startPage,'...')
                 next_page.click()
                 startPage += 1
                 time.sleep(8)
@@ -71,9 +70,6 @@ while True:
             save_excel_page(lst, keyword, driver, start, startPage)
             print(f"Completed {start} to {startPage} :)\n")
                 
-
-            
- 
     elif yesno == "n":
         cookie = str(input("Enter Cookie : "))
         keyword = str(input("Enter Keyword : "))
@@ -86,8 +82,8 @@ while True:
             i = 0
             while True:
                 lst.append(scaping_table(driver))
-                print('Page',i+1,'...')
                 next_page = driver.find_element_by_xpath('//*[@id="next"]')
+                print('Page',i+1,'...')
                 next_page.click()
                 time.sleep(8)
                 i += 1
