@@ -47,6 +47,7 @@ while True:
 
         time.sleep(1)
         input_page = driver.find_element_by_xpath('//*[@id="cPage"]')
+        input_page.send_keys(Keys.CONTROL,'a')
         input_page.send_keys(Keys.BACK_SPACE)
         input_page.send_keys(startPage)
         time.sleep(1)

@@ -1,4 +1,3 @@
-from os import error, pipe
 from selenium.webdriver.common.keys import Keys
 import time
 from funcSelenium import *
@@ -44,8 +43,8 @@ while True:
         enter_wesbite(driver, cookie, keyword)
 
         sum_page = finishPage - startPage
-
         input_page = driver.find_element_by_xpath('//*[@id="cPage"]')
+        input_page.send_keys(Keys.CONTROL,'a')
         input_page.send_keys(Keys.BACK_SPACE)
         input_page.send_keys(startPage)
         input_page.send_keys(Keys.ENTER)

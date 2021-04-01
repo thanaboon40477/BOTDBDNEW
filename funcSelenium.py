@@ -171,7 +171,7 @@ def scaping_row_table(driver, lst, startPage):
         
         driver.back() 
         select_val = driver.find_element_by_xpath('//*[@id="sortBy"]') 
-        time.sleep(1)
+        time.sleep(5)
         select_val.click()
         time.sleep(1)
         val_xpath = driver.find_element_by_xpath('//*[@id="sortBy"]/option[1]')
@@ -181,6 +181,7 @@ def scaping_row_table(driver, lst, startPage):
         val_xpath.click()
         time.sleep(1)
         input_page = driver.find_element_by_xpath('//*[@id="cPage"]')
+        input_page.send_keys(Keys.CONTROL,'a')
         input_page.send_keys(Keys.BACK_SPACE)
         input_page.send_keys(startPage)
         time.sleep(1)
