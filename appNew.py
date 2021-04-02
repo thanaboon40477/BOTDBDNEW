@@ -43,6 +43,7 @@ while True:
         enter_wesbite(driver, cookie, keyword)
 
         sum_page = finishPage - startPage
+
         input_page = driver.find_element_by_xpath('//*[@id="cPage"]')
         input_page.send_keys(Keys.CONTROL,'a')
         input_page.send_keys(Keys.BACK_SPACE)

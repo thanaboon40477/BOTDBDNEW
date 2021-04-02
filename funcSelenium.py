@@ -62,7 +62,7 @@ def scaping_row_table(driver, lst, startPage):
         i += 1
         print(f'Page {startPage} Row',i,'...')
         # ลำดับ
-        time.sleep(2)
+        time.sleep(3)
         order = driver.find_elements_by_xpath(f'//*[@id="fixTable"]/tbody/tr[{i}]/td[1]')
         number = order[0].text
         print(number)
@@ -177,6 +177,10 @@ def scaping_row_table(driver, lst, startPage):
         val_xpath = driver.find_element_by_xpath('//*[@id="sortBy"]/option[1]')
         val_xpath.click()
         time.sleep(1)
+        select_val = driver.find_element_by_xpath('//*[@id="sortBy"]') 
+        time.sleep(3)
+        select_val.click()
+        time.sleep(1)
         val_xpath = driver.find_element_by_xpath('//*[@id="sortBy"]/option[5]')
         val_xpath.click()
         time.sleep(1)
@@ -184,9 +188,8 @@ def scaping_row_table(driver, lst, startPage):
         input_page.send_keys(Keys.CONTROL,'a')
         input_page.send_keys(Keys.BACK_SPACE)
         input_page.send_keys(startPage)
-        time.sleep(1)
         input_page.send_keys(Keys.ENTER)
-        time.sleep(8)
+        time.sleep(6)
 
         data = {'ลำดับ':number, 'เลขทะเบียนนิติบุคคล':regis_nb, 'ชื่อนิติบุคคล':name_ett, 'ประเภทนิติบุคคล':jrt_type, 'สถานะ':jrt_status,
                     'รหัสประเภทธุรกิจ':bsn_type_code, 'ชื่อประเภทธุรกิจ':n_bsn_type, 'จังหวัด':prov, 'ทุนจดทะเบียน(บาท)':regis_capital,
